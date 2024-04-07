@@ -14,7 +14,7 @@ void remove_redundant(node* file, Linkedlist* Linkedlist)
             if (remove(file->File_Name->c_str()) != 0)
             {
                 string description = "Error deleting a file: In the File " + (*file->URL_File) + "\nPlease check that the file.";
-                displayErrorMessage("Error deleting a file", &description);
+                //displayErrorMessage("Error deleting a file", &description);
                 exit(0);
             }
             else
@@ -116,7 +116,7 @@ void File_seprate(const string& file_path, Linkedlist* valid, Linkedlist* delete
     {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-        displayErrorMessage(msg, &description);
+        //displayErrorMessage(msg, &description);
         return;
     }
 
@@ -146,7 +146,7 @@ void File_seprate(const string& file_path, Linkedlist* valid, Linkedlist* delete
         }
         catch (const invalid_argument& e) {
             string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            displayErrorMessage("Invalid File name", &description);
+            //displayErrorMessage("Invalid File name", &description);
             valid->Empty_Linkedlist();
             delete_list->Empty_Linkedlist();
             break;
@@ -180,7 +180,7 @@ void File_empty(const string& file_path, Linkedlist* validfiles, Linkedlist* bin
     {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-        displayErrorMessage(msg, &description);
+       // displayErrorMessage(msg, &description);
         return;
     }
 
@@ -211,7 +211,7 @@ void File_empty(const string& file_path, Linkedlist* validfiles, Linkedlist* bin
         catch (const invalid_argument& e)
         {
             string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            displayErrorMessage("Invalid File name", &description);
+            //displayErrorMessage("Invalid File name", &description);
             validfiles->Empty_Linkedlist();
             binfiles->Empty_Linkedlist();
             break;
@@ -244,7 +244,7 @@ void File_Date(const string& file_path, Linkedlist* validfiles, Linkedlist* binf
     {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-        displayErrorMessage(msg, &description);
+       // displayErrorMessage(msg, &description);
         return;
     }
 
@@ -275,7 +275,7 @@ void File_Date(const string& file_path, Linkedlist* validfiles, Linkedlist* binf
         }
         catch (const invalid_argument& e) {
             string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            displayErrorMessage("Invalid File name", &description);
+            //displayErrorMessage("Invalid File name", &description);
             validfiles->Empty_Linkedlist();
             binfiles->Empty_Linkedlist();
             break;
@@ -305,7 +305,7 @@ void File_Accessed(const string& file_path, Linkedlist* validfiles, Linkedlist* 
     if (!file.is_open()) {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-        displayErrorMessage(msg, &description);
+       // displayErrorMessage(msg, &description);
         return;
     }
 
@@ -334,7 +334,7 @@ void File_Accessed(const string& file_path, Linkedlist* validfiles, Linkedlist* 
         }
         catch (const invalid_argument& e) {
             string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            displayErrorMessage("Invalid File name", &description);
+            //displayErrorMessage("Invalid File name", &description);
             validfiles->Empty_Linkedlist();
             binfiles->Empty_Linkedlist();
             break;
@@ -382,7 +382,7 @@ void remove_list(Linkedlist* bin) {
 
 
 
-/ void displayErrorMessage(const string & message, const string description) {
+/* void displayErrorMessage(const string& message, const string description) {
 
     cout << "\n\n\033[31m";
     cout << message;
