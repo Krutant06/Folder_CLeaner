@@ -35,7 +35,7 @@ long new_date(node* file)
     int dd, mm, yyyy;
     long x;
 
-    sscanf((*file->date_of_creation).c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
+    sscanf_s((*file->date_of_creation).c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
 
     x = (yyyy * 10000) + (mm * 100) + dd;
     return x;
@@ -105,7 +105,7 @@ bool IsValid(node* file, int acc, long date)
 
 
 
-void File_seprate(const string& file_path, Linkedlist* valid, Linkedlist* delete_list, int min_acc, long min_date)
+void File_seprate(const string& file_path, Linkedlist* valid, Linkedlist* delete_list, int min_acc, int min_date)
 {
 
     int filenumber = 0;
@@ -138,19 +138,9 @@ void File_seprate(const string& file_path, Linkedlist* valid, Linkedlist* delete
         getline(ss, size_str, ',');
         getline(ss, URL);
 
-        int access_count;
-        long size__;
-        try {
-            access_count = stoi(access_count_str);
-            size__ = stol(size_str);
-        }
-        catch (const invalid_argument& e) {
-            string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            //displayErrorMessage("Invalid File name", &description);
-            valid->Empty_Linkedlist();
-            delete_list->Empty_Linkedlist();
-            break;
-        }
+        int access_count = 0;
+        long size__ = 0;
+
 
         node* file_element = new node(name, access_count, date_created, size__, URL);
         if (!IsValid(file_element, min_acc, min_date)) {
@@ -180,7 +170,7 @@ void File_empty(const string& file_path, Linkedlist* validfiles, Linkedlist* bin
     {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-       // displayErrorMessage(msg, &description);
+        // displayErrorMessage(msg, &description);
         return;
     }
 
@@ -202,20 +192,9 @@ void File_empty(const string& file_path, Linkedlist* validfiles, Linkedlist* bin
         getline(ss, size_str, ',');
         getline(ss, URL);
 
-        int access_count;
-        long size__;
-        try {
-            access_count = stoi(access_count_str);
-            size__ = stol(size_str);
-        }
-        catch (const invalid_argument& e)
-        {
-            string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            //displayErrorMessage("Invalid File name", &description);
-            validfiles->Empty_Linkedlist();
-            binfiles->Empty_Linkedlist();
-            break;
-        }
+        int access_count = 0;
+        long size__ = 0;
+
 
         node* file_element = new node(name, access_count, date_created, size__, URL);
         if (File_empty(file_element)) {
@@ -244,7 +223,7 @@ void File_Date(const string& file_path, Linkedlist* validfiles, Linkedlist* binf
     {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-       // displayErrorMessage(msg, &description);
+        // displayErrorMessage(msg, &description);
         return;
     }
 
@@ -266,20 +245,8 @@ void File_Date(const string& file_path, Linkedlist* validfiles, Linkedlist* binf
         getline(ss, size_str, ',');
         getline(ss, URL);
 
-        int access_count;
-        long size__;
-        try
-        {
-            access_count = stoi(access_count_str);
-            size__ = stol(size_str);
-        }
-        catch (const invalid_argument& e) {
-            string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            //displayErrorMessage("Invalid File name", &description);
-            validfiles->Empty_Linkedlist();
-            binfiles->Empty_Linkedlist();
-            break;
-        }
+        int access_count = 0;
+        long size__ = 0;
 
         node* file_element = new node(name, access_count, date_created, size__, URL);
         if (Old_by_Date(file_element, date)) {
@@ -305,7 +272,7 @@ void File_Accessed(const string& file_path, Linkedlist* validfiles, Linkedlist* 
     if (!file.is_open()) {
         const string msg = "Failed to open file: " + file_path + "\n";
         string description = "File not found.";
-       // displayErrorMessage(msg, &description);
+        // displayErrorMessage(msg, &description);
         return;
     }
 
@@ -326,19 +293,8 @@ void File_Accessed(const string& file_path, Linkedlist* validfiles, Linkedlist* 
         getline(ss, size_str, ',');
         getline(ss, URL);
 
-        int access_count;
-        long size__;
-        try {
-            access_count = stoi(access_count_str);
-            size__ = stol(size_str);
-        }
-        catch (const invalid_argument& e) {
-            string description = "Invalid File name : In the File " + to_string(filenumber) + " From top.\nPlease check that the file name is as required.";
-            //displayErrorMessage("Invalid File name", &description);
-            validfiles->Empty_Linkedlist();
-            binfiles->Empty_Linkedlist();
-            break;
-        }
+        int access_count = 0;
+        long size__ = 0;
 
         node* file_element = new node(name, access_count, date_created, size__, URL);
         if (File_Accessed(file_element, min_acc)) {

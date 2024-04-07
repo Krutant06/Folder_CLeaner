@@ -16,14 +16,13 @@ int main() {
 
 
 
-	cout << "On which basis do you want to clean your file :\n";
-	cout << "1) remove Redundant files \n";
-	cout << "2) remove old files \n";
-	cout << "3) remove empty files \n";
-	cout << "4) remove low access files \n";
-	cout << "5) according to all of the above  \n";
+	cout << "Select a Number :\n";
+	cout << "1) Remove Redundant files \n";
+	cout << "2) Remove old files \n";
+	cout << "3) Remove empty files \n";
+	cout << "4) Remove low access files \n";
+	cout << "5) According to all of the above  \n";
 	cout << "now select according to any of the above :\n";
-	cout << "(Note : you can make two choices later on so don't worry about it)\n";
 
 	int i = 0; int min_acc = 0; string date_str;
 	cin >> i;
@@ -37,10 +36,10 @@ int main() {
 		int dd, mm, yyyy;
 		long date;
 
-		sscanf(date_str.c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
+		sscanf_s(date_str.c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
 
 		date = (yyyy * 10000) + (mm * 100) + dd;
-		sepratedata_by_all(file_location, &remain, &bin, min_acc, date, "By creation date");
+		File_seprate(File_URL, &List, &List_Delete, min_acc, date);
 		break;
 	}
 
@@ -51,36 +50,28 @@ int main() {
 		int dd, mm, yyyy;
 		long date;
 
-		sscanf(date_str.c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
+		sscanf_s(date_str.c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
 
 		date = (yyyy * 10000) + (mm * 100) + dd;
-		sepratedata_by_date(file_location, &remain, &bin, date, "By creation date");
+		File_seprate(File_URL, &List, &List_Delete, date, "By creation date");
 		break;
 	}
 	case 4: {
 		cout << "Give the minimun nmber of access :\n(Note: anything which has less access count than minimum access count will be removed)\n";
 		cin >> min_acc;
-		sepratedata_by_access_count(file_location, &remain, &bin, min_acc);
+		File_Accessed(File_URL, &List, &List_Delete, min_acc);
 		break;
 	}
 	case 3: {
-		sepratedata_by_empty(file_location, &remain, &bin);
+		File_empty(File_URL, &List, &List_Delete);
 		break;
 	}
 
 	case 1: {
-		sepratedata_by_empty(file_location, &remain, &bin);
+		File_empty(File_URL, &List, &List_Delete);
 		break;
 	}
 	}
 
-
-}
-
-	char check;
-	cout << "press X to exit...\n";
-	cin >> check;
-	if (check == 'x')
-		return 0;
-	else return 0;
+	return 0;
 }
