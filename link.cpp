@@ -6,7 +6,7 @@
 #include <string>
 #include<ctime>
 #include "node.h"
-#include "link.h"
+using namespace std;
 
 
 Linkedlist::Linkedlist() {

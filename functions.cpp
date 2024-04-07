@@ -1,5 +1,6 @@
 #include "node.h"
-#include "link.h"
+#include "link.cpp"
+using namespace std;
 long saved_memory = 0;
 
 
@@ -381,10 +382,10 @@ void remove_list(Linkedlist* bin) {
 
 
 
-void displayErrorMessage(const string& message, const string* description) {
+/ void displayErrorMessage(const string & message, const string description) {
 
     cout << "\n\n\033[31m";
     cout << message;
     cout << *description << "\n";
     cout << "\033[0m";
-}
+}*/
