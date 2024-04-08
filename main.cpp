@@ -1,20 +1,16 @@
 // Capstone final.cpp : This file contains the 'main' function. Program execution begins and ends there.
-#include "node.h"
 #include "functions.cpp"
+
 using namespace std;
 
 int main() {
 	Linkedlist List, List_Delete;
 	string File_URL;
 
-
-	cout << "Enter a Number";
-
-
 	cin >> File_URL;
 	ifstream file(File_URL);
 
-
+start:
 
 	cout << "Select a Number :\n";
 	cout << "1) Remove Redundant files \n";
@@ -26,7 +22,10 @@ int main() {
 
 	int i = 0; int min_acc = 0; string date_str;
 	cin >> i;
-	if (i > 5 || i < 1) goto start;
+	if (i > 5 || i < 1) {
+		cout << "Please Enter a valid Number";
+		goto start;
+	}
 	switch (i) {
 	case 5: {
 		cout << "Give the minimun nmber of access :\n(Note: anything which has less access count than minimum access count will be removed)\n";
@@ -39,7 +38,7 @@ int main() {
 		sscanf_s(date_str.c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
 
 		date = (yyyy * 10000) + (mm * 100) + dd;
-		File_seprate(File_URL, &List, &List_Delete, min_acc, date);
+		//File_seprate(File_URL, &List, &List_Delete, min_acc, date);
 		break;
 	}
 
@@ -53,7 +52,7 @@ int main() {
 		sscanf_s(date_str.c_str(), "%d-%d-%d", &dd, &mm, &yyyy);
 
 		date = (yyyy * 10000) + (mm * 100) + dd;
-		File_seprate(File_URL, &List, &List_Delete, date, "By creation date");
+		//File_seprate(File_URL, &List, &List_Delete, date, "By creation date");
 		break;
 	}
 	case 4: {

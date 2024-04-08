@@ -1,7 +1,6 @@
-#include "node.h"
 #include "link.cpp"
 using namespace std;
-long saved_memory = 0;
+//long memory_save__ = 0;
 
 
 void remove_redundant(node* file, Linkedlist* Linkedlist)
@@ -19,7 +18,7 @@ void remove_redundant(node* file, Linkedlist* Linkedlist)
             }
             else
             {
-                saved_memory += file->size_file;
+                memory_save__ += file->size_file;
             }
         }
     }
@@ -312,7 +311,7 @@ void File_Accessed(const string& file_path, Linkedlist* validfiles, Linkedlist* 
 
 
 int get_saved_memory() {
-    return saved_memory;
+    return memory_save__;
 }
 
 
@@ -328,7 +327,7 @@ void Checking(string file_name, Linkedlist* bin, Linkedlist* valid) {
 void remove_list(Linkedlist* bin) {
     node* temp = bin->gethead();
     while (temp != nullptr) {
-        saved_memory += temp->size_file;
+        memory_save__ += temp->size_file;
         string element = "sample\\" + *temp->File_Name;
         cout << element;
         remove(element.c_str());
