@@ -16,3 +16,8 @@ Implementing Liniked List , File Handling
 
 Tirth Kanani (202301075)  &  Rushi Gaadhiya(202301156)
 Input Database , Other Functions
+
+Link to the video of output: https://drive.google.com/file/d/1tC1u_6YJfyEg7YLYWJ0V67lGBIXpc-bm/view?usp=sharing
+
+![Date output](https://github.com/Krutant06/Capstone-Project/assets/164739951/b7fb1d77-b3ab-4822-a86d-007f7c9c0c44)
+
