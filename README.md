@@ -21,3 +21,8 @@ Link to the video of output: https://drive.google.com/file/d/1tC1u_6YJfyEg7YLYWJ
 
 ![Date output](https://github.com/Krutant06/Capstone-Project/assets/164739951/b7fb1d77-b3ab-4822-a86d-007f7c9c0c44)
 
+
+Viva Presentation Link - 
+
+https://docs.google.com/presentation/d/1ef5nXDDYAW0_LYK7sNmfcO6VpTv60u9w/edit?usp=drivesdk&ouid=105380438747267080820&rtpof=true&sd=true
+
