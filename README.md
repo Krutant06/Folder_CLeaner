@@ -9,6 +9,7 @@ unwanted files.
 
 We have also implemented the function to display the details of the folder.
 
+Group members:
 
 Kirtan Chhatbar (202301098) 
 
