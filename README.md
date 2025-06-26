@@ -1,6 +1,4 @@
-Capstone Project
-Section A -- Problem 5
-Team Symplifyers
+
 
 In this project we were asked to create a folder cleaner. We have implemented various functions such as 
 checking whether file is empty, deleting the files older than a certain date, deleting the file less than
