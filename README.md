@@ -12,8 +12,11 @@ We have also implemented the function to display the details of the folder.
 Contribution :-
 
 Kirtan Chhatbar (202301098) 
+
 Krutant Jethva(202301120)
+
 Tirth Kanani (202301075) 
+
 Rushi Gaadhiya(202301156)
 
 
