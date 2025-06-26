@@ -11,11 +11,11 @@ We have also implemented the function to display the details of the folder.
 
 Contribution :-
 
-Kirtan Chhatbar (202301098)  &  Krutant Jethva(202301120)
-Implementing Liniked List , File Handling 
+Kirtan Chhatbar (202301098) 
+Krutant Jethva(202301120)
+Tirth Kanani (202301075) 
+Rushi Gaadhiya(202301156)
 
-Tirth Kanani (202301075)  &  Rushi Gaadhiya(202301156)
-Input Database , Other Functions
 
 Link to the video of output: https://drive.google.com/file/d/1tC1u_6YJfyEg7YLYWJ0V67lGBIXpc-bm/view?usp=sharing
 
